@@ -6,10 +6,17 @@
 
 \renewcommand{\labelitemi}{\small$\blacktriangleright$}
 \renewcommand{\labelitemii}{\textbullet}
-\RequirePackage{enumitem}
+
+\RequirePackage{paralist}
+\RequirePackage[shortlabels]{enumitem}
 \setlist[itemize]{noitemsep}
 \setlist[enumerate]{noitemsep}
 \setlist[description]{noitemsep}
+
+
+% \usepackage[shortlabels]{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 
 %----------------------------------------------------------------------------------------
 %	SIMPLE BOXED ENVIRONMENT

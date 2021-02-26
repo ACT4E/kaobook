@@ -6,7 +6,7 @@
 
 \RequirePackage{etoolbox} % Easy programming to modify TeX stuff
 \RequirePackage{calc} % Make calculations
-\RequirePackage[usenames,dvipsnames,table]{xcolor} % Colours
+\RequirePackage[usenames,dvipsnames,table,svgnames]{xcolor} % Colours
 \RequirePackage{iftex} % Check wether XeTeX is being used
 \RequirePackage{xifthen} % Easy conditionals
 \RequirePackage{options} % Manage class options
@@ -452,14 +452,20 @@
 \RequirePackage{multicol} % Multiple columns in dictionary
 \RequirePackage{rotating} % Allows tables and figures to be rotated
 \RequirePackage{listings} % Print code listings
-%\RequirePackage{minted}
+
 \RequirePackage[hypcap=true]{caption} % Correctly placed anchors for hyperlinks
-\RequirePackage{scrhack} % Make packages compatible with KOMA Script
+
 % \RequirePackage{atbegshi}
 % \RequirePackage{perpage}
 \let\c@abspage\relax
 % \newcommand{\pp@g@sidenote}{}
 \RequirePackage{floatrow} % Set up captions of floats
+
+\providecommand{\mintedcache}{cache-minted}
+
+\usepackage[draft=false,cache=true,cachedir=\mintedcache]{minted}
+% \RequirePackage{minted}
+\RequirePackage{scrhack} % Make packages compatible with KOMA Script
 %\RequirePackage{dblfloatfix} % Better positioning of wide figures and tables
 
 % Improve the figure placing (see https://www.overleaf.com/learn/latex/Tips)
@@ -891,10 +897,10 @@
 	\RequirePackage[utf8]{inputenc} % utf8 encoding in the input (.tex) file
 	\RequirePackage[T1]{fontenc} % utf8 encoding in the output (.pdf) file
 
-	\RequirePackage[scaled=.97,helvratio=.93,p,theoremfont]{newpxtext} % Serif palatino font
-	\RequirePackage[vvarbb,smallerops,bigdelims]{newpxmath} % Math palatino font
-	\RequirePackage[scaled=.85]{beramono} % Monospace font
-	\RequirePackage[scr=rsfso,cal=boondoxo]{mathalfa} % Mathcal from STIX, unslanted a bit
+	% \RequirePackage[scaled=.97,helvratio=.93,p,theoremfont]{newpxtext} % Serif palatino font
+	% \RequirePackage[vvarbb,smallerops,bigdelims]{newpxmath} % Math palatino font
+	% \RequirePackage[scaled=.85]{beramono} % Monospace font
+	% \RequirePackage[scr=rsfso,cal=boondoxo]{mathalfa} % Mathcal from STIX, unslanted a bit
 	\RequirePackage{amssymb} % Math symbols, including \blacktriangleright, used for bullets
     \RequirePackage{morewrites} % Fix some errors related to floats
 \fi

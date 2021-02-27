@@ -33,7 +33,7 @@
 \newcommand{\@baseclass}{scrbook} % Base class name
 
 % Set the default options
-\PassOptionsToClass{a4paper}{\@baseclass}
+% \PassOptionsToClass{a4paper}{\@baseclass}
 \PassOptionsToClass{fontsize=10pt}{\@baseclass}
 \PassOptionsToClass{parskip=half}{\@baseclass}
 \PassOptionsToClass{headings=optiontoheadandtoc}{\@baseclass}
@@ -131,6 +131,7 @@
 		\mbox{\chapappifchapterprefix{\nobreakspace}\scalebox{2.85}{\thechapter\autodot}}%
 	}%
 	\setlength{\kao@chfsize}{\dimexpr 1mm * \f@size\relax}%
+	% \setlength{\kao@chfsize}{11pt}%
 	\renewcommand\chapterlinesformat[3]{%
 		\vspace{3.5\vscale}%
 		\smash{\makebox[0pt][l]{%

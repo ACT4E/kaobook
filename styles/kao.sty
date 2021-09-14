@@ -122,8 +122,7 @@
 \setlength{\vscale}{1mm}
 
 \RequirePackage[
-	% paperwidth=8.125in,
-	% paperheight=10.250in
+	% showframe
 ]{geometry}
 
 % Command to choose among the three possible layouts
@@ -136,10 +135,12 @@
 % Layout #1: large margins
 \newcommand{\marginlayout}{%
 	\newgeometry{
-		% top=20.4\vscale,
-		top=27.4\vscale,
+		top=20.4\vscale,
+		% top=27.4\vscale,
 		% bottom=27.4\vscale,
-		bottom=15.4\vscale,
+		% bottom=15.4\vscale,
+		% bottom=10.4\vscale,
+		bottom=5\vscale,
 		% inner=24.8\hscale,
 		% textwidth=107\hscale,
 		% textwidth=117\hscale,
@@ -189,7 +190,7 @@
 % Set the header height to prevent a warning
 %\setlength{\headheight}{27.4\vscale}
 % Increase the space between header and text
-\setlength{\headsep}{11\vscale}
+% \setlength{\headsep}{11\vscale}
 
 % Define some LaTeX lengths used in the page headers
 \newlength{\headtextwidth}
@@ -263,8 +264,11 @@
 \RequirePackage{ragged2e} % Required to achieve better ragged paragraphs
 \RequirePackage{setspace} % Required to easily set the space between lines
 \RequirePackage{hyphenat} % Hyphenation for special fonts
-% \RequirePackage{microtype} % Improves character and word spacing
-\usepackage[tracking=true,kerning=true,spacing=true,final,factor=1100]{microtype}
+\RequirePackage[final,tracking,kerning,spacing]{microtype} % Improves character and word spacing
+% \usepackage[tracking=true,kerning=true,spacing=true,final,factor=1100]{microtype}
+% stretch=1000.
+% \usepackage[tracking=true,kerning=true,spacing=true,final]{microtype}
+
 \RequirePackage{needspace} % Required to prevent page break right after a sectioning command
 \RequirePackage{xspace} % Better print trailing whitespace
 

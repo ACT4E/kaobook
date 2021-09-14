@@ -122,7 +122,7 @@
 \setlength{\vscale}{1mm}
 
 \RequirePackage[
-	% showframe
+	showframe
 ]{geometry}
 
 % Command to choose among the three possible layouts
@@ -135,22 +135,15 @@
 % Layout #1: large margins
 \newcommand{\marginlayout}{%
 	\newgeometry{
-		top=20.4\vscale,
-		% top=27.4\vscale,
-		% bottom=27.4\vscale,
-		% bottom=15.4\vscale,
-		% bottom=10.4\vscale,
-		bottom=5\vscale,
-		% inner=24.8\hscale,
-		% textwidth=107\hscale,
-		% textwidth=117\hscale,
-		% inner=14.8\hscale,
-		textwidth=113\hscale,
-		inner=15.8\hscale,
-		% outer=2.8\hscale,
-		% outer=10\hscale,
+		top=16.4\vscale,
+		bottom=8\vscale, 
+		% textwidth=113\hscale,
+		textwidth=117\hscale,
+		inner=15.8\hscale, 
 		marginparsep=5\hscale,
 		marginparwidth=58.4\hscale,
+		footskip=4\hscale,
+		headsep=1\hscale
 	}%
 }
 
@@ -190,7 +183,8 @@
 % Set the header height to prevent a warning
 %\setlength{\headheight}{27.4\vscale}
 % Increase the space between header and text
-% \setlength{\headsep}{11\vscale}
+% \setlength{\headsep}{1\vscale}
+% \setlength{\bottomsep}{0\vscale}
 
 % Define some LaTeX lengths used in the page headers
 \newlength{\headtextwidth}

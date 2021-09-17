@@ -26,7 +26,6 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{kaobook}[2020/12/30 v0.9.5 kaobook]
-\pdfminorversion=7
 
 \RequirePackage{xkeyval} % Manage class key-value options
 

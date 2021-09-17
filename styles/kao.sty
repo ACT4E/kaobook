@@ -258,10 +258,7 @@
 \RequirePackage{ragged2e} % Required to achieve better ragged paragraphs
 \RequirePackage{setspace} % Required to easily set the space between lines
 \RequirePackage{hyphenat} % Hyphenation for special fonts
-\RequirePackage[final,tracking,kerning,spacing]{microtype} % Improves character and word spacing
-% \usepackage[tracking=true,kerning=true,spacing=true,final,factor=1100]{microtype}
-% stretch=1000.
-% \usepackage[tracking=true,kerning=true,spacing=true,final]{microtype}
+
 
 \RequirePackage{needspace} % Required to prevent page break right after a sectioning command
 \RequirePackage{xspace} % Better print trailing whitespace
@@ -890,19 +887,31 @@
 \fi
 
 \ifxetexorluatex
+	\RequirePackage[final,protrusion]{microtype} % Improves character and word spacing
+
+\else
+	\pdfminorversion=7
+	\RequirePackage[final,tracking,kerning,spacing]{microtype} % Improves character and word spacing
+% \usepackage[tracking=true,kerning=true,spacing=true,final,factor=1100]{microtype}
+% stretch=1000.
+% \usepackage[tracking=true,kerning=true,spacing=true,final]{microtype}
+
+\fi
+
+\ifxetexorluatex
 	\RequirePackage{amssymb} % Must be loaded before unicode-math
 	\RequirePackage[force]{filehook} % Fixes an error
-	\RequirePackage{unicode-math} % Math fonts in xetexorluatex
-	\setromanfont[
-		Scale=1.04
-	]{Libertinus Serif}
-	\setsansfont[
-		Scale=1
-	]{Libertinus Sans}
-	\setmonofont[
-		Scale=.89
-	]{Liberation Mono}
-	\setmathfont{Libertinus Math}
+	% \RequirePackage{unicode-math} % Math fonts in xetexorluatex
+	% \setromanfont[
+	% 	Scale=1.04
+	% ]{Libertinus Serif}
+	% \setsansfont[
+	% 	Scale=1
+	% ]{Libertinus Sans}
+	% \setmonofont[
+	% 	Scale=.89
+	% ]{Liberation Mono}
+	% \setmathfont{Libertinus Math}
     \ifluatex
     \else
         \RequirePackage{morewrites} % Fix some errors related to floats

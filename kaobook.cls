@@ -201,8 +201,16 @@
 % Takes as input the image path and optionally the "beforeskip"
 \DeclareDocumentCommand{\setchapterimage}{O{55\vscale} m}{%
 	\setchapterpreamble[o]{%
-		\vspace*{-27\vscale}\hspace*{\dimexpr - \hoffset - \oddsidemargin - 1in}%
-		\includegraphics[width=\paperwidth,height=#1+27\vscale,keepaspectratio=false]{#2}%
+		% \vspace*{-27\vscale}%
+		% \vspace*{-27\vscale}%
+		% \hspace*{\dimexpr - \hoffset - \oddsidemargin - 1in}%
+		% \includegraphics[width=\paperwidth,height=#1+27\vscale,keepaspectratio=false]{#2}%
+		% \includegraphics[height=#1+27\vscale,keepaspectratio=true]{#2}%
+	\begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
+	\node[anchor=north east,xshift=5mm,yshift=4mm]{
+		\includegraphics[width=\paperwidth+5mm,keepaspectratio=true]{#2}%
+		};
+	\end{tikzpicture}
 	}%
 	\chapterstyleimage{#1}%
 	% beforeskip=-(figure_height-top_margin)

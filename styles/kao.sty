@@ -54,10 +54,10 @@
 %	PAGE LAYOUT
 %----------------------------------------------------------------------------------------
 
-% Define lengths to set the scale of the document. Changing these 
-% lengths should affect all the other pagesize-dependent elements in the 
-% layout, such as the geometry of the page, the spacing between 
-% paragraphs, and so on. (As of now, not all the elements rely on hscale 
+% Define lengths to set the scale of the document. Changing these
+% lengths should affect all the other pagesize-dependent elements in the
+% layout, such as the geometry of the page, the spacing between
+% paragraphs, and so on. (As of now, not all the elements rely on hscale
 % and vscale; future work will address this shortcoming.)
 \newlength{\hscale}
 \newlength{\vscale}
@@ -136,10 +136,10 @@
 \newcommand{\marginlayout}{%
 	\newgeometry{
 		top=16.4\vscale,
-		bottom=8\vscale, 
+		bottom=8\vscale,
 		% textwidth=113\hscale,
 		textwidth=117\hscale,
-		inner=15.8\hscale, 
+		inner=15.8\hscale,
 		marginparsep=5\hscale,
 		marginparwidth=58.4\hscale,
 		footskip=7\hscale,
@@ -851,7 +851,7 @@
 		\etocsetstyle{section}%
 		{\parindent -5pt \parskip 3pt}%
 		{\leftskip 20pt \rightskip 12pt} %
-		{\hspace{0.01cm}\llap{\etocnumber\hspace{0.1cm}}\etocname\nobreak\leaders\hbox{\hbox to 1.5ex {\hss.\hss}}\hfill\makebox[-0.1cm][l]{\etocpage}\par}%	
+		{\hspace{0.01cm}\llap{\etocnumber\hspace{0.1cm}}\etocname\nobreak\leaders\hbox{\hbox to 1.5ex {\hss.\hss}}\hfill\makebox[-0.1cm][l]{\etocpage}\par}%
 		{}%
 		% Set the style for subsection entries
 		\etocsetstyle{subsection}%
@@ -928,7 +928,7 @@
     \RequirePackage{morewrites} % Fix some errors related to floats
 \fi
 
-% When using the Palatino (newpxtext) font, it is better to use a 
+% When using the Palatino (newpxtext) font, it is better to use a
 % slightly larger stretch.
 %\setstretch{1.10}
 % \linespread{1.07} % Give Palatino more leading (space between lines)
@@ -953,7 +953,7 @@
 	%bookmarksopenlevel=4,
 	linktoc=all, % Toc entries and numbers links to pages
 	breaklinks=true,
-	colorlinks=true,
+	colorlinks=false,
 	%allcolors=DarkGreen,
 	citecolor = DarkOrange,
     linkcolor = Blue,

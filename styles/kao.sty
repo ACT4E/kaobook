@@ -330,20 +330,20 @@
 \RequirePackage{chngcntr} % Reset counters at sections
 
 % TODO: see also page 440 of the KOMA-script guide
-\RequirePackage[
-	bottom,
-	symbol*,
-	hang,
-	flushmargin,
-	% perpage,
-	stable,
-]{footmisc} % Required to set up the footnotes
-\RequirePackage{footnotebackref} % Creates back references from footnotes to text
+% \RequirePackage[
+% 	bottom,
+% 	symbol*,
+% 	hang,
+% 	flushmargin,
+% 	% perpage,
+% 	stable,
+% ]{footmisc} % Required to set up the footnotes
+% \RequirePackage{footnotebackref} % Creates back references from footnotes to text
 
 % Fix the color of the footnote marker when back-referenced
-\patchcmd{\footref}{\ref}{\hypersetup{colorlinks=black}\ref}{}{}%
+% \patchcmd{\footref}{\ref}{\hypersetup{colorlinks=black}\ref}{}{}%
 % Workaround to fix back references
-\edef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
+% \edef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
 
 % FIXME: I am not able to choose the paragraph layout of footnotes, probably the footnotes package conflicts with scrbook.
 %\renewcommand{\footnotelayout}{\@margin@par}
@@ -937,7 +937,7 @@
 %	HYPERREFERENCES
 %----------------------------------------------------------------------------------------
 
-\usepackage{silence}
+\RequirePackage{silence}
 % \WarningsOff[hyperref]
 \WarningsOff[contour]
 \WarningFilter{hyperref}{Option `colorlinks'}
@@ -969,24 +969,24 @@
 }
 
 % Define a new color for the footnote marks
-\def\@footnotecolor{black}
-\define@key{Hyp}{footnotecolor}{%
-	\HyColor@HyperrefColor{#1}\@footnotecolor%
-}
-\def\@footnotemark{%
-	\leavevmode
-	\ifhmode\edef\@x@sf{\the\spacefactor}\nobreak\fi
-	\stepcounter{Hfootnote}%
-	\global\let\Hy@saved@currentHref\@currentHref
-	\hyper@makecurrent{Hfootnote}%
-	\global\let\Hy@footnote@currentHref\@currentHref
-	\global\let\@currentHref\Hy@saved@currentHref
-	\hyper@linkstart{footnote}{\Hy@footnote@currentHref}%
-	\@makefnmark
-	\hyper@linkend
-	\ifhmode\spacefactor\@x@sf\fi
-	\relax
-}
+% \def\@footnotecolor{black}
+% \define@key{Hyp}{footnotecolor}{%
+% 	\HyColor@HyperrefColor{#1}\@footnotecolor%
+% }
+% \def\@footnotemark{%
+% 	\leavevmode
+% 	\ifhmode\edef\@x@sf{\the\spacefactor}\nobreak\fi
+% 	\stepcounter{Hfootnote}%
+% 	\global\let\Hy@saved@currentHref\@currentHref
+% 	\hyper@makecurrent{Hfootnote}%
+% 	\global\let\Hy@footnote@currentHref\@currentHref
+% 	\global\let\@currentHref\Hy@saved@currentHref
+% 	\hyper@linkstart{footnote}{\Hy@footnote@currentHref}%
+% 	\@makefnmark
+% 	\hyper@linkend
+% 	\ifhmode\spacefactor\@x@sf\fi
+% 	\relax
+% }
 
 \let\oldthanks\thanks
 \renewcommand\thanks[1]{%
@@ -995,16 +995,16 @@
 }
 
 % Adjust the colour of the footnotes marks using the colour defined above
-\renewcommand\@makefntext[1]{%
-	\renewcommand\@makefnmark{%
-		\mbox{\textsuperscript{\normalfont%
-			\hyperref[\BackrefFootnoteTag]{%
-				\color{\@footnotecolor}{\@thefnmark}%
-			}}\,%
-		}%
-	}%
-	\BHFN@OldMakefntext{#1}%
-}
+% \renewcommand\@makefntext[1]{%
+% 	\renewcommand\@makefnmark{%
+% 		\mbox{\textsuperscript{\normalfont%
+% 			\hyperref[\BackrefFootnoteTag]{%
+% 				\color{\@footnotecolor}{\@thefnmark}%
+% 			}}\,%
+% 		}%
+% 	}%
+% 	\BHFN@OldMakefntext{#1}%
+% }
 
 %----------------------------------------------------------------------------------------
 %	COLOURS
